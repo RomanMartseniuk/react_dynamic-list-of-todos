@@ -8,7 +8,7 @@ type Props = {
 };
 
 export const TodoFilter: React.FC<Props> = ({
-  visible = 2,
+  visible = 'all',
   setVisible,
   filterBy = '',
   setFilterBy,

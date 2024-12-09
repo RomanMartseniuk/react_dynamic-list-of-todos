@@ -3,9 +3,6 @@ const BASE_URL =
 
 export function GetData(url: string) {
   return fetch(BASE_URL + url).then(response => {
-    if (!response.ok) {
-    }
-
     return response.json();
   });
 }

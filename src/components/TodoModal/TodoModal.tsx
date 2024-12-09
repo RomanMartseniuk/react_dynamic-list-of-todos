@@ -10,7 +10,7 @@ type Props = {
 };
 
 export const TodoModal: React.FC<Props> = ({ todo, setTodo }) => {
-  const [user, setUser] = useState<User>();
+  const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
@@ -19,7 +19,9 @@ export const TodoModal: React.FC<Props> = ({ todo, setTodo }) => {
       .then(data => {
         setUser(data);
       })
-      .catch()
+      .catch(() => {
+        setUser(null);
+      })
       .finally(() => setTimeout(() => setIsLoading(false), 300));
   }, [todo.userId]);
 

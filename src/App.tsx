@@ -21,7 +21,7 @@ export const App: React.FC = () => {
   const [visible, setVisible] = useState<Visible>('all');
   const [filterBy, setFilterBy] = useState<string>('');
 
-  const [activeTodo, setActiveTodo] = useState<Todo | null>();
+  const [activeTodo, setActiveTodo] = useState<Todo | null>(null);
 
   useEffect(() => {
     setIsListLoading(true);
